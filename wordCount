@@ -1,0 +1,8 @@
+
+
+scala> val names = sc.textFile("/home/ubuntu/csv/ baby-names.csv")
+scala> val nameCount = names.map(line=>line.split(",")).map(word=>(word(1),1)).reduceByKey((a,b)=>a+b)
+scala> nameCount.saveAsTextFile("/home/ubuntu/csv/2")
+
+
+
